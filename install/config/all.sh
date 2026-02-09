@@ -8,8 +8,7 @@ run_logged $MISTLETOE_INSTALL/config/increase-lockout-limit.sh
 run_logged $MISTLETOE_INSTALL/config/ssh-flakiness.sh
 run_logged $MISTLETOE_INSTALL/config/detect-keyboard-layout.sh
 run_logged $MISTLETOE_INSTALL/config/xcompose.sh
-run_logged $MISTLETOE_INSTALL/config/mise-work.sh
-run_logged $MISTLETOE_INSTALL/config/fix-powerprofilesctl-shebang.sh
+run_logged $MISTLETOE_INSTALL/config/mise-projects.sh
 run_logged $MISTLETOE_INSTALL/config/docker.sh
 run_logged $MISTLETOE_INSTALL/config/mimetypes.sh
 run_logged $MISTLETOE_INSTALL/config/localdb.sh
