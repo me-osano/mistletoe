@@ -19,7 +19,6 @@ run_logged $MISTLETOE_INSTALL/config/hardware/network.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/set-wireless-regdom.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/bluetooth.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/printer.sh
-run_logged $MISTLETOE_INSTALL/config/hardware/power-optimization.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/usb-autosuspend.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/ignore-power-button.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/fix-f13-amd-audio-input.sh
