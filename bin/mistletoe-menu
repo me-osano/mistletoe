@@ -269,7 +269,8 @@ show_install_service_menu() {
 }
 
 show_install_editor_menu() {
-  case $(menu "Install" "  VSCode\n  Emacs\n  Cursor\n  Zed\n  Sublime Text\n  Helix") in
+  case $(menu "Install" "  Neovim\n  VSCode\n  Emacs\n  Cursor\n  Zed\n  Sublime Text\n  Helix") in
+  *Neovim*) install_and_launch "Neovim" "omarchy-nvim" && omarchy-nvim-setup
   *VSCode*) present_terminal mistletoe-install-vscode ;;
   *Emacs*) install "Emacs" "emacs-wayland" && systemctl --user enable --now emacs.service ;;
   *Cursor*) install_and_launch "Cursor" "cursor-bin" "cursor" ;;

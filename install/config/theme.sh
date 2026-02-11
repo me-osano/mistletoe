@@ -2,14 +2,11 @@
 sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-previous-symbolic.svg /usr/share/icons/Yaru/scalable/actions/go-previous-symbolic.svg
 sudo ln -snf /usr/share/icons/Adwaita/symbolic/actions/go-next-symbolic.svg /usr/share/icons/Yaru/scalable/actions/go-next-symbolic.svg
 
-# Setup theme links
+# Setup user theme folder
 mkdir -p ~/.config/mistletoe/themes
-for f in ~/.local/share/mistletoe/themes/*; do ln -nfs "$f" ~/.config/mistletoe/themes/; done
 
 # Set initial theme
-mkdir -p ~/.config/mistletoe/current
-ln -snf ~/.config/mistletoe/themes/tokyo-night ~/.config/mistletoe/current/theme
-ln -snf ~/.config/mistletoe/current/theme/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png ~/.config/mistletoe/current/background
+mistletoe-theme-set "Tokyo Night"
 
 # Set specific app links for current theme
 mkdir -p ~/.config/btop/themes
