@@ -5,6 +5,7 @@ alacritty
 avahi
 bash-completion
 bat
+blueberry
 brightnessctl
 btop
 clang
@@ -130,4 +131,5 @@ xdg-terminal-exec
 xmlstarlet
 xournalpp
 yaru-icon-theme
+yay
 zoxide
