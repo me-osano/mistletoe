@@ -198,7 +198,7 @@ show_font_menu() {
 }
 
 show_setup_menu() {
-  local options="  Audio\n  Wifi\n󰂯  Bluetooth\n󰍹  Monitors"
+  local options="  Audio\n  Wifi\n󰂯  Bluetooth\n󱐋  Power\n󰍹  Monitors"
   [ -f ~/.config/hypr/keybindings.conf ] && options="$options\n  Keybindings"
   [ -f ~/.config/hypr/input.conf ] && options="$options\n  Input"
   options="$options\n󰱔  DNS\n  Security\n  Config"
@@ -207,6 +207,7 @@ show_setup_menu() {
   *Audio*) mistletoe-launch-audio ;;
   *Wifi*) mistletoe-launch-wifi ;;
   *Bluetooth*) mistletoe-launch-bluetooth ;;
+  *Power*) show_setup_power_menu ;;
   *Monitors*) open_in_editor ~/.config/hypr/monitors.conf ;;
   *Keybindings*) open_in_editor ~/.config/hypr/keybindings.conf ;;
   *Input*) open_in_editor ~/.config/hypr/input.conf ;;
@@ -214,6 +215,13 @@ show_setup_menu() {
   *Security*) show_setup_security_menu ;;
   *Config*) show_setup_config_menu ;;
   *) show_main_menu ;;
+  esac
+}
+
+show_setup_power_menu() {
+  case $(menu "Power" "󱐋 Tlp\n󱐋  Power Profiles") in
+  *Tlp*) mistletoe-setup-tlp ;;
+  *PPD*) mistletoe-setup-ppd ;;
   esac
 }
 
