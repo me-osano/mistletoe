@@ -220,8 +220,8 @@ show_setup_menu() {
 
 show_setup_power_menu() {
   case $(menu "Power" "󱐋 Tlp\n󱐋  Power Profiles") in
-  *Tlp*) mistletoe-setup-tlp ;;
-  *PPD*) mistletoe-setup-ppd ;;
+  *Tlp*) present_terminal mistletoe-setup-tlp ;;
+  *PPD*) present_terminal mistletoe-setup-ppd ;;
   esac
 }
 
