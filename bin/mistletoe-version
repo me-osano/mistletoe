@@ -1,2 +1,2 @@
 #!/bin/bash
-cat $OMARCHY_PATH/version
+cat $MISTLETOE_PATH/version

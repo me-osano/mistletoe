@@ -1,4 +1,3 @@
-mistletoe-webapp-install "Basecamp" https://launchpad.37signals.com Basecamp.png
 mistletoe-webapp-install "WhatsApp" https://web.whatsapp.com/ WhatsApp.png
 mistletoe-webapp-install "Proton Mail" https://mail.proton.me/ ProtonMail.png
 mistletoe-webapp-install "Google Photos" https://photos.google.com/ "Google Photos.png"

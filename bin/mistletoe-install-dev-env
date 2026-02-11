@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Install one of the supported development environments. Usually called via Install > Development > * in the Omarchy Menu.
+# Install one of the supported development environments. Usually called via Install > Development > * in the Mistletoe Menu.
 
 if [[ -z "$1" ]]; then
-  echo "Usage: omarchy-install-dev-env <ruby|node|bun|go|laravel|symfony|php|python|elixir|phoenix|rust|java|ocaml|dotnet|clojure>" >&2
+  echo "Usage: mistletoe-install-dev-env <ruby|node|bun|go|laravel|symfony|php|python|elixir|phoenix|rust|java|ocaml|dotnet|clojure>" >&2
   exit 1
 fi
 
@@ -49,7 +49,7 @@ install_node() {
 case "$1" in
 ruby)
   echo -e "Installing Ruby on Rails...\n"
-  omarchy-pkg-add libyaml
+  mistletoe-pkg-add libyaml
   mise use --global ruby@latest
   mise settings add idiomatic_version_file_enable_tools ruby
   echo "gem: --no-document" > ~/.gemrc
@@ -85,7 +85,7 @@ laravel)
 symfony)
   echo -e "Installing PHP and Symfony...\n"
   install_php
-  omarchy-pkg-add symfony-cli
+  mistletoe-pkg-add symfony-cli
   echo -e "\nYou can now run: symfony new --webapp myproject"
   ;;
 python)
@@ -138,7 +138,7 @@ dotnet)
   ;;
 clojure)
   echo -e "Installing Clojure...\n"
-  omarchy-pkg-add rlwrap
+  mistletoe-pkg-add rlwrap
   mise use --global clojure@latest
   ;;
 esac

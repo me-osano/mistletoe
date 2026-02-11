@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-# Reinstall the Omarchy configuration directory from the git source.
+# Reinstall the Mistletoe configuration directory from the git source.
 
-git clone "https://github.com/basecamp/omarchy.git" ~/.local/share/omarchy-new >/dev/null
-mv $OMARCHY_PATH ~/.local/share/omarchy-old
-mv ~/.local/share/omarchy-new $OMARCHY_PATH
+git clone "https://github.com/me-osano/mistletoe.git" ~/.local/share/mistletoe-new >/dev/null
+mv $MISTLETOE_PATH ~/.local/share/mistletoe-old
+mv ~/.local/share/mistletoe-new $MISTLETOE_PATH

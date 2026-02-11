@@ -17,13 +17,13 @@ while [[ $# -gt 0 ]]; do
       ;;
     *)
       echo "Unknown option: $1"
-      echo "Usage: omarchy-debug [--no-sudo] [--print]"
+      echo "Usage: mistletoe-debug [--no-sudo] [--print]"
       exit 1
       ;;
   esac
 done
 
-LOG_FILE="/tmp/omarchy-debug.log"
+LOG_FILE="/tmp/mistletoe-debug.log"
 
 if [ "$NO_SUDO" = true ]; then
   DMESG_OUTPUT="(skipped - --no-sudo flag used)"
@@ -34,7 +34,7 @@ fi
 cat > "$LOG_FILE" <<EOF
 Date: $(date)
 Hostname: $(hostname)
-Omarchy Branch: $(git -C "$OMARCHY_PATH" branch --show-current 2>/dev/null || echo "unknown")
+Mistletoe Branch: $(git -C "$MISTLETOE_PATH" branch --show-current 2>/dev/null || echo "unknown")
 
 =========================================
 SYSTEM INFORMATION
@@ -89,7 +89,7 @@ case "$ACTION" in
     less "$LOG_FILE"
     ;;
   "Save in current directory")
-    cp "$LOG_FILE" "./omarchy-debug.log"
-    echo "✓ Log saved to $(pwd)/omarchy-debug.log"
+    cp "$LOG_FILE" "./mistletoe-debug.log"
+    echo "✓ Log saved to $(pwd)/mistletoe-debug.log"
     ;;
 esac

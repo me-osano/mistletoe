@@ -1,6 +1,6 @@
 #!/bin/bash
 
-update_log="/tmp/omarchy-update.log"
+update_log="/tmp/mistletoe-update.log"
 
 # Check for errors
 if grep -qi "error" "$update_log"; then

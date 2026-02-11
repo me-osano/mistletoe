@@ -32,6 +32,7 @@ fontconfig
 fzf
 github-cli
 gnome-calculator
+gnome-disk-utility
 gnome-keyring
 gnome-themes-extra
 grim
@@ -74,7 +75,7 @@ mariadb-libs
 mise
 mpv
 nautilus
-gnome-disk-utility
+nautilus-python
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STATE_FILE=~/.local/state/omarchy/toggles/suspend-on
+STATE_FILE=~/.local/state/mistletoe/toggles/suspend-on
 
 if [[ ! -f $STATE_FILE ]]; then
   mkdir -p "$(dirname $STATE_FILE)"

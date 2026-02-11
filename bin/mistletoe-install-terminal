@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Install one of the approved terminals and set it as the default for Omarchy (Super + Return etc).
+# Install one of the approved terminals and set it as the default for Mistletoe (Super + Return etc).
 
 if (($# == 0)); then
-  echo "Usage: omarchy-install-terminal [alacritty|ghostty|kitty]"
+  echo "Usage: mistletoe-install-terminal [alacritty|ghostty|kitty]"
   exit 1
 fi
 
@@ -21,7 +21,7 @@ kitty) desktop_id="kitty.desktop" ;;
 esac
 
 # Install package
-if omarchy-pkg-add $package; then
+if mistletoe-pkg-add $package; then
   # Copy custom desktop entry for alacritty with X-TerminalArg* keys
   if [[ $package == "alacritty" ]]; then
     mkdir -p ~/.local/share/applications

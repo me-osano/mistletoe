@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Start and stop a screenrecording, which will be saved to ~/Videos by default.
-# Alternative location can be set via OMARCHY_SCREENRECORD_DIR or XDG_VIDEOS_DIR ENVs.
+# Alternative location can be set via MISTLETOE_SCREENRECORD_DIR or XDG_VIDEOS_DIR ENVs.
 
 [[ -f ~/.config/user-dirs.dirs ]] && source ~/.config/user-dirs.dirs
-OUTPUT_DIR="${OMARCHY_SCREENRECORD_DIR:-${XDG_VIDEOS_DIR:-$HOME/Videos}}"
+OUTPUT_DIR="${MISTLETOE_SCREENRECORD_DIR:-${XDG_VIDEOS_DIR:-$HOME/Videos}}"
 
 if [[ ! -d "$OUTPUT_DIR" ]]; then
   notify-send "Screen recording directory does not exist: $OUTPUT_DIR" -u critical -t 3000

@@ -14,10 +14,12 @@ run_logged $MISTLETOE_INSTALL/config/mimetypes.sh
 run_logged $MISTLETOE_INSTALL/config/localdb.sh
 run_logged $MISTLETOE_INSTALL/config/walker-elephant.sh
 run_logged $MISTLETOE_INSTALL/config/fast-shutdown.sh
+run_logged $MISTLETOE_INSTALL/config/input-group.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/network.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/set-wireless-regdom.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/bluetooth.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/printer.sh
+run_logged $MISTLETOE_INSTALL/config/hardware/power-optimization.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/usb-autosuspend.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/ignore-power-button.sh
 run_logged $MISTLETOE_INSTALL/config/hardware/fix-f13-amd-audio-input.sh

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TEMPLATES_DIR="$OMARCHY_PATH/default/themed"
-USER_TEMPLATES_DIR="$HOME/.config/omarchy/themed"
-NEXT_THEME_DIR="$HOME/.config/omarchy/current/next-theme"
+TEMPLATES_DIR="$MISTLETOE_PATH/default/themed"
+USER_TEMPLATES_DIR="$HOME/.config/mistletoe/themed"
+NEXT_THEME_DIR="$HOME/.config/mistletoe/current/next-theme"
 COLORS_FILE="$NEXT_THEME_DIR/colors.toml"
 
 # Convert hex color to decimal RGB (e.g., "#1e1e2e" -> "30,30,46")

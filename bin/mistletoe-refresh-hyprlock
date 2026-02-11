@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Overwrite the user config for hyprlock with the Omarchy default.
+# Overwrite the user config for hyprlock with the Mistletoe default.
 
-omarchy-refresh-config hypr/hyprlock.conf
+mistletoe-refresh-config hypr/hyprlock.conf

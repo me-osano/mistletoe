@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Overwrite the user config for fastfetch with the Omarchy default.
+# Overwrite the user config for fastfetch with the Mistletoe default.
 
-omarchy-refresh-config fastfetch/config.jsonc
+mistletoe-refresh-config fastfetch/config.jsonc

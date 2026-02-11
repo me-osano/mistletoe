@@ -1,8 +1,8 @@
 --
--- Dynamic Omarchy Theme Menu for Elephant/Walker
+-- Dynamic Mistletoe Theme Menu for Elephant/Walker
 --
-Name = "omarchythemes"
-NamePretty = "Omarchy Themes"
+Name = "mistletoethemes"
+NamePretty = "Mistletoe Themes"
 
 -- Check if file exists using Lua (no subprocess)
 local function file_exists(path)
@@ -30,9 +30,9 @@ end
 -- The main function elephant will call
 function GetEntries()
   local entries = {}
-  local user_theme_dir = os.getenv("HOME") .. "/.config/omarchy/themes"
-  local omarchy_path = os.getenv("OMARCHY_PATH") or ""
-  local default_theme_dir = omarchy_path .. "/themes"
+  local user_theme_dir = os.getenv("HOME") .. "/.config/mistletoe/themes"
+  local mistletoe_path = os.getenv("MISTLETOE_PATH") or ""
+  local default_theme_dir = mistletoe_path .. "/themes"
 
   local seen_themes = {}
 
@@ -76,7 +76,7 @@ function GetEntries()
             Preview = preview_path,
             PreviewType = "file",
             Actions = {
-              activate = "omarchy-theme-set " .. theme_name,
+              activate = "mistletoe-theme-set " .. theme_name,
             },
           })
         end

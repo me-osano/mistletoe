@@ -1,21 +1,21 @@
 #!/bin/bash
 
 if [[ -z $1 ]]; then
-  echo "Usage: omarchy-theme-set <theme-name>"
+  echo "Usage: mistletoe-theme-set <theme-name>"
   exit 1
 fi
 
-CURRENT_THEME_PATH="$HOME/.config/omarchy/current/theme"
-NEXT_THEME_PATH="$HOME/.config/omarchy/current/next-theme"
-USER_THEMES_PATH="$HOME/.config/omarchy/themes"
-OMARCHY_THEMES_PATH="$OMARCHY_PATH/themes"
+CURRENT_THEME_PATH="$HOME/.config/mistletoe/current/theme"
+NEXT_THEME_PATH="$HOME/.config/mistletoe/current/next-theme"
+USER_THEMES_PATH="$HOME/.config/mistletoe/themes"
+MISTLETOE_THEMES_PATH="$MISTLETOE_PATH/themes"
 
 THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
 
 if [[ -d "$USER_THEMES_PATH/$THEME_NAME" ]]; then
   THEME_PATH="$USER_THEMES_PATH/$THEME_NAME"
-elif [[ -d "$OMARCHY_THEMES_PATH/$THEME_NAME" ]]; then
-  THEME_PATH="$OMARCHY_THEMES_PATH/$THEME_NAME"
+elif [[ -d "$MISTLETOE_THEMES_PATH/$THEME_NAME" ]]; then
+  THEME_PATH="$MISTLETOE_THEMES_PATH/$THEME_NAME"
 else
   echo "Theme '$THEME_NAME' does not exist"
   exit 1
@@ -29,35 +29,35 @@ mkdir -p "$NEXT_THEME_PATH"
 cp -r "$THEME_PATH/"* "$NEXT_THEME_PATH/" 2>/dev/null
 
 # Generate dynamic configs
-omarchy-theme-set-templates
+mistletoe-theme-set-templates
 
 # Swap next theme in as current
 rm -rf "$CURRENT_THEME_PATH"
 mv "$NEXT_THEME_PATH" "$CURRENT_THEME_PATH"
 
 # Store theme name for reference
-echo "$THEME_NAME" > "$HOME/.config/omarchy/current/theme.name"
+echo "$THEME_NAME" > "$HOME/.config/mistletoe/current/theme.name"
 
 # Change background with theme
-omarchy-theme-bg-next
+mistletoe-theme-bg-next
 
 # Restart components to apply new theme
 if pgrep -x waybar >/dev/null; then
-  omarchy-restart-waybar
+  mistletoe-restart-waybar
 fi
-omarchy-restart-swayosd
-omarchy-restart-terminal
-omarchy-restart-hyprctl
-omarchy-restart-btop
-omarchy-restart-opencode
-omarchy-restart-mako
+mistletoe-restart-swayosd
+mistletoe-restart-terminal
+mistletoe-restart-hyprctl
+mistletoe-restart-btop
+mistletoe-restart-opencode
+mistletoe-restart-mako
 
 # Change app-specific themes
-omarchy-theme-set-gnome
-omarchy-theme-set-browser
-omarchy-theme-set-vscode
-omarchy-theme-set-obsidian
-omarchy-theme-set-asusctl
+mistletoe-theme-set-gnome
+mistletoe-theme-set-browser
+mistletoe-theme-set-vscode
+mistletoe-theme-set-obsidian
+mistletoe-theme-set-asusctl
 
 # Call hook on theme set
-omarchy-hook theme-set "$THEME_NAME"
+mistletoe-hook theme-set "$THEME_NAME"
