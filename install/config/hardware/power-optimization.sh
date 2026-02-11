@@ -111,6 +111,6 @@ echo "==> Enabling Powertop service..."
 sudo systemctl enable powertop.service
 
 echo "-------------------------------"
-echo "✅ Power optimization setup complete!"
+echo "Power optimization setup complete!"
 echo "You can now reboot or run 'sudo systemctl start powertop.service' to apply Powertop tunings."
 echo "-------------------------------"  `

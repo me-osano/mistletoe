@@ -102,7 +102,7 @@ catch_errors() {
 
     case "$choice" in
     "Retry installation")
-      bash ~/.local/share/mistletoe/install.sh
+      bash ~/.local/share/mistletoe/all.sh
       break
       ;;
     "View full log")
