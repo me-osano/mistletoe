@@ -185,7 +185,12 @@ show_style_menu() {
 }
 
 show_theme_menu() {
-  mistletoe-launch-walker -m menus:mistletoethemes --width 800 --minheight 400
+  theme=$(menu "Theme" "$(mistletoe-theme-list)" "" "$(mistletoe-theme-current)")
+  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
+    back_to show_style_menu
+  else
+    mistletoe-theme-set "$theme"
+  fi
 }
 
 show_font_menu() {
