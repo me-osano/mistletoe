@@ -21,7 +21,7 @@ sudo pacman -Syu --noconfirm --needed git
 # Use custom repo if specified, otherwise default to me-osano/mistletoe
 MISTLETOE_REPO="${MISTLETOE_REPO:-me-osano/mistletoe}"
 
-echo -e "\nCloning Mistletoe from: https://github.com/${MISTLETOE_REPO}.git"
+echo -e "\nCloning Mistletoe from: https://github.com/${MISTLETOE_REPO}"
 rm -rf ~/.local/share/mistletoe/
 git clone "https://github.com/${MISTLETOE_REPO}.git" ~/.local/share/mistletoe >/dev/null
 
