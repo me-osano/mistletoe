@@ -58,6 +58,7 @@ mistletoe-theme-set-browser
 mistletoe-theme-set-vscode
 mistletoe-theme-set-obsidian
 mistletoe-theme-set-asusctl
+mistletoe-theme-set-neovim
 
 # Call hook on theme set
 mistletoe-hook theme-set "$THEME_NAME"
