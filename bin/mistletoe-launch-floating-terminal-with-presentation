@@ -4,4 +4,4 @@
 # Used by actions such as Update System.
 
 cmd="$*"
-exec setsid uwsm-app -- xdg-terminal-exec --class=org.mistletoe.terminal --title=Mistletoe-terminal -e bash -c "mistletoe-show-logo; $cmd; if [ \$? -ne 130 ]; then mistletoe-show-done; fi"
+exec setsid uwsm-app -- xdg-terminal-exec --class=org.mistletoe.terminal --title=Mistletoe -e bash -c "mistletoe-show-logo; $cmd; if [ \$? -ne 130 ]; then mistletoe-show-done; fi"
