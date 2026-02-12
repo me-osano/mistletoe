@@ -11,7 +11,7 @@
 # ---------------------------
 # PATH Setup
 # ---------------------------
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 # Disable command hashing (important for mise)
 set +h
@@ -246,8 +246,8 @@ whatsmyip() {
 alias whatismyip="whatsmyip"
 
 # ----------------------------------------------------
-# Optional: auto-start X on tty1 (DM-less setups only)
+# Optional: auto-start hyprland on tty1 (DM-less setups only)
 # ----------------------------------------------------
-if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
-  exec hyprland
-fi
+#if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
+#  exec hyprland
+#fi
