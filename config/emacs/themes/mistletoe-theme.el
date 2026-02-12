@@ -1,84 +1,8 @@
 ;;; mistletoe-theme.el --- Mistletoe theme for Emacs -*- lexical-binding: t; -*-
 
-;; Copyright 2025-present Mistletoe, All rights reserved
-;;
-;; Permission is hereby granted, free of charge, to any person obtaining
-;; a copy of this software and associated documentation files (the
-;; "Software"), to deal in the Software without restriction, including
-;; without limitation the rights to use, copy, modify, merge, publish,
-;; distribute, sublicense, and/or sell copies of the Software, and to
-;; permit persons to whom the Software is furnished to do so, subject to
-;; the following conditions:
-;;
-;; The above copyright notice and this permission notice shall be included
-;; in all copies or substantial portions of the Software.
-;;
-;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-;; EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-;; MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-;; IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-;; CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-;; TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-;; SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-;; Maintainer: Enosh Osano Misonge
-;; Author: Enosh Misonge Osano <https://github.com/xix-osano>
-;; Version: 1.0.0
-;; Package-Requires: ((emacs "29.1"))
-;; URL: https://github.com/xix-osano/emacs-mistletoe-theme.git
-
-;;; Commentary:
-;; mistletoe-theme.el provides the theme `mistletoe', a port of the
-;; Mistletoe colors to Emacs.  To select a palette and enable the theme,
-;; evaluate:
-;; Place mistletoe-theme.el in ~/.emacs.d/themes/mistletoe-theme.el
-;;
-;; Add to your emacs config.el:
-;;
-;;     (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;     (load-theme 'mistletoe t)
-;;
-
-;;; Code:
+(load-file "~/.config/emacs/themes/palette.el")
 
 (deftheme mistletoe "A Mistletoe theme.")
-
-;; Define the palette
-(defconst mistletoe-colors
-  '((rosewater . "#f5e0dc")
-    (flamingo  . "#f2cdcd")
-    (pink      . "#f5c2e7")
-    (magenta   . "#c678dd")
-    (mauve     . "#cba6f7")
-    (red       . "#f38ba8")
-    (maroon    . "#eba0ac")
-    (peach     . "#fab387")
-    (yellow    . "#f9e2af")
-    (green     . "#a6e3a1")
-    (orange    . "#f18400")
-    (teal      . "#04f8ff")
-    (sky       . "#89dceb")
-    (sapphire  . "#74c7ec")
-    (blue      . "#41b2ea")
-    (lavender  . "#b4befe")
-    (text      . "#cdd6f4")
-    (const     . "#96defa")
-    (var       . "#ff6ba9")
-    (subtext1  . "#bac2de")
-    (subtext0  . "#a6adc8")
-    (overlay2  . "#9399b2")
-    (overlay1  . "#7f849c")
-    (overlay0  . "#6c7086")
-    (comment   . "#7a95a0")
-    (surface2  . "#585b70")
-    (surface1  . "#45475a")
-    (surface0  . "#313244")
-    (base      . "#1e1e2e")
-    (base1     . "#1a1a2a")
-    (warning   . "#e81050")
-    (mantle    . "#181825")
-    (crust     . "#11111b"))
-  "Mistletoe palette.")
 
 ;; Helper for palette lookup
 (defun mistletoe-color (name)
@@ -93,7 +17,7 @@
  `(mode-line ((t (:background ,(mistletoe-color 'mantle)
                   :foreground ,(mistletoe-color 'text)))))
  `(mode-line-inactive ((t (:background ,(mistletoe-color 'crust)
-				       :foreground ,(mistletoe-color 'overlay0)))))
+				                   :foreground ,(mistletoe-color 'overlay0)))))
  `(mode-line-buffer-id ((t (:foreground ,(mistletoe-color 'orange)))))
  `(fringe ((t (:background ,(mistletoe-color 'base)
 			   :foreground ,(mistletoe-color 'surface1)))))
@@ -102,15 +26,26 @@
  `(link ((t (:foreground ,(mistletoe-color 'teal)))))
  `(line-number ((t (:foreground ,(mistletoe-color 'surface1)))))
  `(line-number-current-line ((t (:foreground ,(mistletoe-color 'teal)))))
+ `(shadow ((t (:foreground ,(mistletoe-color 'overlay1)))))
+ `(success ((t (:foreground ,(mistletoe-color 'green)))))
+ `(warning ((t (:foreground ,(mistletoe-color 'yellow)))))
+ `(error ((t (:foreground ,(mistletoe-color 'red)))))
+ `(match ((t (:background ,(mistletoe-color 'surface1)
+              :foreground ,(mistletoe-color 'teal)))))
+ `(secondary-selection ((t (:background ,(mistletoe-color 'surface1)))))
+ `(trailing-whitespace ((t (:background ,(mistletoe-color 'red)))))
+ `(escape-glyph ((t (:foreground ,(mistletoe-color 'peach)))))
+ `(homoglyph ((t (:foreground ,(mistletoe-color 'peach)))))
 
  ;; Dashboard
  `(dashboard-startup-banner ((t (:foreground ,(mistletoe-color 'teal)))))
  `(dashboard-banner-logo-title ((t (:foreground ,(mistletoe-color 'teal)))))
  `(dashboard-heading ((t (:foreground ,(mistletoe-color 'magenta)))))
  `(dashboard-footer ((t (:foreground ,(mistletoe-color 'teal)))))
- 
+
  ;; Highlight faces
- `(region ((t (:background ,(mistletoe-color 'surface1)))))
+ `(region ((t (:background ,(mistletoe-color 'surface1)
+               :extend t))))
  `(highlight ((t (:background ,(mistletoe-color 'surface0)))))
  `(hl-line ((t (:background ,(mistletoe-color 'surface0)))))
  `(isearch ((t (:background ,(mistletoe-color 'peach)
@@ -167,7 +102,7 @@
    ((t (:background ,(mistletoe-color 'base1)
         :foreground ,(mistletoe-color 'overlay1)
         :height 0.9 :extend t))))
- 
+
  ;; Org Todo
  `(org-todo ((t (:foreground ,(mistletoe-color 'peach)
                  :weight bold))))
@@ -179,7 +114,7 @@
                   :underline t))))
  `(org-tag ((t (:foreground ,(mistletoe-color 'overlay1)
                  :weight light))))
- 
+
  ;; Org Tables
  `(org-table ((t (:foreground ,(mistletoe-color 'blue)))))
  `(org-quote ((t (:foreground ,(mistletoe-color 'subtext0)

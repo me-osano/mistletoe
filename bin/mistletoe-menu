@@ -287,7 +287,7 @@ show_install_editor_menu() {
   case $(menu "Install" "  Neovim\n  VSCode\n  Emacs\n  Cursor\n  Zed\n  Sublime Text\n  Helix") in
   *Neovim*) present_terminal mistletoe-install-neovim ;;
   *VSCode*) present_terminal mistletoe-install-vscode ;;
-  *Emacs*) install "Emacs" "emacs" ;;
+  *Emacs*) install "Emacs" "emacs-wayland" ;;
   *Cursor*) install_and_launch "Cursor" "cursor-bin" "cursor" ;;
   *Zed*) present_terminal "echo 'Installing Zed...'; sudo pacman -S zed && setsid gtk-launch dev.zed.Zed" ;;
   *Sublime*) install_and_launch "Sublime Text" "sublime-text-4" "sublime_text" ;;
