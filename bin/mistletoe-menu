@@ -206,7 +206,7 @@ show_setup_menu() {
   local options="  Audio\n  Wifi\n󰂯  Bluetooth\n󱐋  Power\n󰍹  Monitors"
   [ -f ~/.config/hypr/keybindings.conf ] && options="$options\n  Keybindings"
   [ -f ~/.config/hypr/input.conf ] && options="$options\n  Input"
-  [ -f ~/.config/hypr/windowrules.conf ] && options="$options\n  Window Rules"
+  [ -f ~/.config/hypr/windowrules.conf ] && options="$options\n󰍹   WindowRules"
   options="$options\n󰱔  DNS\n  Security\n  Config"
 
   case $(menu "Setup" "$options") in
@@ -217,7 +217,7 @@ show_setup_menu() {
   *Monitors*) open_in_editor ~/.config/hypr/monitors.conf ;;
   *Keybindings*) open_in_editor ~/.config/hypr/keybindings.conf ;;
   *Input*) open_in_editor ~/.config/hypr/input.conf ;;
-  *WRules*) open_in_editor ~/.config/hypr/windowrules.conf ;;
+  *WindowRules*) open_in_editor ~/.config/hypr/windowrules.conf ;;
   *DNS*) present_terminal mistletoe-setup-dns ;;
   *Security*) show_setup_security_menu ;;
   *Config*) show_setup_config_menu ;;
