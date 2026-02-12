@@ -1,6 +1,0 @@
-source ~/.local/share/mistletoe/default/bash/shell
-source ~/.local/share/mistletoe/default/bash/aliases
-source ~/.local/share/mistletoe/default/bash/functions
-source ~/.local/share/mistletoe/default/bash/init
-source ~/.local/share/mistletoe/default/bash/envs
-[[ $- == *i* ]] && bind -f ~/.local/share/mistletoe/default/bash/inputrc
