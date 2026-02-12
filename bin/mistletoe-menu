@@ -465,7 +465,7 @@ show_remove_elixir_menu() {
 }
 
 show_update_menu() {
-  case $(menu "Update" " Mistletoe\n  Config\n󰸌  Extra Themes\n  Process\n󰇅  Hardware\n  Firmware\n  Password\n  Timezone\n  Time") in
+  case $(menu "Update" "  Mistletoe\n  Config\n󰸌  Extra Themes\n  Process\n󰇅  Hardware\n  Firmware\n  Password\n  Timezone\n  Time") in
   *Mistletoe*) present_terminal mistletoe-update ;;
   *Config*) show_update_config_menu ;;
   *Themes*) present_terminal mistletoe-theme-update ;;
