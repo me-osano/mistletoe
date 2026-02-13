@@ -248,6 +248,7 @@ alias whatismyip="whatsmyip"
 # ----------------------------------------------------
 # Optional: auto-start hyprland on tty1 (DM-less setups only)
 # ----------------------------------------------------
-#if [[ -z $DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
-#  exec hyprland
-#fi
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  clear
+  exec uwsm start hyprland.desktop > /dev/null 2>&1
+fi
